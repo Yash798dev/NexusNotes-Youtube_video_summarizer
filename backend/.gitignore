@@ -1,0 +1,92 @@
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+*.pyc
+
+# ── Virtual Environments ──────────────────────────────────────────────────────
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# ── Environment Variables (NEVER commit secrets) ──────────────────────────────
+.env
+.env.local
+.env.production
+.env.*.local
+
+# ── Data Directory (videos, audio, keyframes, SQLite DB) ─────────────────────
+# These are large runtime-generated files — not source code
+data/
+*.db
+*.sqlite
+*.sqlite3
+
+# ── Whisper Model Cache ───────────────────────────────────────────────────────
+# Whisper downloads model weights on first run (~140 MB for base)
+~/.cache/whisper/
+.cache/
+
+# ── PyTorch / ML Artifacts ────────────────────────────────────────────────────
+*.pt
+*.pth
+*.ckpt
+*.bin
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── OS Files ──────────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ── IDE / Editor ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Distribution / Build ──────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/
+*.egg
+.eggs/
+MANIFEST
+
+# ── Testing ───────────────────────────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+
+# ── Type Checking ─────────────────────────────────────────────────────────────
+.mypy_cache/
+.dmypy.json
+dmypy.json
+.pyright/
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb
+
+# ── Celery (if you add task queues later) ────────────────────────────────────
+celerybeat-schedule
+celerybeat.pid

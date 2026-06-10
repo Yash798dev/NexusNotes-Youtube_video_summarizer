@@ -1,0 +1,27 @@
+# NexusNotes — Backend Dependencies
+# Install with: pip install -r requirements.txt
+
+# Web framework
+fastapi
+uvicorn[standard]
+
+# YouTube download
+yt-dlp
+
+# Vision pipeline
+opencv-python
+scikit-image
+pytesseract
+
+# Audio transcription (Whisper needs torch)
+openai-whisper
+torch
+
+# Gemini AI  (new SDK — uses REST API, supports Gemini 2.5)
+google-genai
+
+# Environment variables
+python-dotenv
+
+# FastAPI extras
+python-multipart

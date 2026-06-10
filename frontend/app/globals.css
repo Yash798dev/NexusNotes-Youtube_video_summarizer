@@ -1,0 +1,175 @@
+@import "tailwindcss";
+
+:root {
+  --bg-primary: #0a0a12;
+  --bg-card: #12121e;
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --accent-purple: #7c3aed;
+  --accent-cyan: #06b6d4;
+  --accent-glow: rgba(124, 58, 237, 0.35);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #64748b;
+  --gradient-hero: linear-gradient(135deg, #7c3aed 0%, #06b6d4 100%);
+  --gradient-card: linear-gradient(145deg, #12121e 0%, #1a1a2e 100%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Scrollbar ───────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: rgba(124, 58, 237, 0.4);
+  border-radius: 3px;
+}
+
+/* ── Glass card ──────────────────────────────── */
+.glass-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+}
+
+/* ── Gradient text ───────────────────────────── */
+.gradient-text {
+  background: var(--gradient-hero);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glowing button ──────────────────────────── */
+.btn-primary {
+  background: var(--gradient-hero);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 30px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* ── Pulse animation ─────────────────────────── */
+@keyframes pulse-ring {
+  0%   { transform: scale(0.95); box-shadow: 0 0 0 0 var(--accent-glow); }
+  70%  { transform: scale(1);    box-shadow: 0 0 0 15px rgba(124,58,237,0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(124,58,237,0); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
+}
+
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%       { transform: translateX(-6px); }
+  40%       { transform: translateX(6px); }
+  60%       { transform: translateX(-4px); }
+  80%       { transform: translateX(4px); }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+.animate-fade-in-up { animation: fade-in-up 0.6s ease both; }
+
+/* ── Markdown prose ──────────────────────────── */
+.prose-nexus h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary); }
+.prose-nexus h2 { font-size: 1.3rem; font-weight: 600; margin: 1.5rem 0 0.5rem; color: #a78bfa; border-bottom: 1px solid var(--border-glass); padding-bottom: 0.4rem; }
+.prose-nexus h3 { font-size: 1.1rem; font-weight: 600; margin: 1rem 0 0.4rem; color: #67e8f9; }
+.prose-nexus p  { line-height: 1.8; color: #cbd5e1; margin-bottom: 0.8rem; }
+.prose-nexus ul { list-style: none; padding-left: 1.2rem; }
+.prose-nexus ul li::before { content: "▸"; color: var(--accent-purple); margin-right: 0.5rem; }
+.prose-nexus li { line-height: 1.7; color: #cbd5e1; margin-bottom: 0.3rem; }
+.prose-nexus code { background: rgba(124,58,237,0.2); border-radius: 4px; padding: 0.1rem 0.4rem; font-size: 0.9em; color: #a78bfa; }
+.prose-nexus pre { background: #0d0d1a; border: 1px solid var(--border-glass); border-radius: 10px; padding: 1rem; overflow-x: auto; margin: 1rem 0; }
+.prose-nexus pre code { background: none; padding: 0; }
+.prose-nexus strong { color: var(--text-primary); font-weight: 600; }
+.prose-nexus a { color: var(--accent-cyan); text-decoration: none; border-bottom: 1px solid rgba(6,182,212,0.3); transition: border-color 0.2s; }
+.prose-nexus a:hover { border-color: var(--accent-cyan); }
+
+/* ── Tab bar ─────────────────────────────────── */
+.tab-bar { display: flex; gap: 0.25rem; background: rgba(255,255,255,0.03); border-radius: 12px; padding: 0.25rem; }
+.tab-btn {
+  border: none; background: transparent; color: var(--text-muted);
+  border-radius: 10px; padding: 0.5rem 1.2rem; font-size: 0.9rem;
+  font-weight: 500; cursor: pointer; transition: all 0.2s ease;
+}
+.tab-btn:hover { color: var(--text-primary); background: rgba(255,255,255,0.05); }
+.tab-btn.active { background: var(--gradient-hero); color: white; box-shadow: 0 0 16px var(--accent-glow); }
+
+/* ── Status badge ────────────────────────────── */
+.status-badge {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  border-radius: 99px; padding: 0.25rem 0.8rem; font-size: 0.8rem; font-weight: 600;
+}
+.status-processing { background: rgba(234,179,8,0.15); color: #fbbf24; border: 1px solid rgba(234,179,8,0.3); }
+.status-completed  { background: rgba(34,197,94,0.15); color: #4ade80; border: 1px solid rgba(34,197,94,0.3); }
+.status-failed     { background: rgba(239,68,68,0.15);  color: #f87171; border: 1px solid rgba(239,68,68,0.3); }
+
+/* ── Timestamp button ────────────────────────── */
+.ts-btn {
+  background: rgba(124,58,237,0.15); border: 1px solid rgba(124,58,237,0.3);
+  border-radius: 6px; color: #a78bfa; cursor: pointer; font-size: 0.75rem;
+  font-family: monospace; padding: 0.15rem 0.5rem; transition: all 0.2s;
+  white-space: nowrap;
+}
+.ts-btn:hover { background: rgba(124,58,237,0.35); box-shadow: 0 0 10px rgba(124,58,237,0.4); transform: scale(1.05); }
+
+/* ── Quiz option ─────────────────────────────── */
+.quiz-option {
+  border: 1px solid var(--border-glass); border-radius: 10px;
+  padding: 0.75rem 1rem; cursor: pointer; transition: all 0.2s;
+  color: var(--text-primary); background: transparent; text-align: left;
+  width: 100%;
+}
+.quiz-option:hover:not(:disabled) { border-color: var(--accent-purple); background: rgba(124,58,237,0.1); }
+.quiz-option.correct  { border-color: #4ade80; background: rgba(34,197,94,0.1); color: #4ade80; }
+.quiz-option.wrong    { border-color: #f87171; background: rgba(239,68,68,0.1);  color: #f87171; }

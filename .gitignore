@@ -1,0 +1,25 @@
+# ── Root-level .gitignore (NexusNotes monorepo) ──────────────────────────────
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Secrets — never commit either .env file
+.env
+backend/.env
+frontend/.env.local
+frontend/.env*.local
+frontend/.next/
+frontend/node_modules/
+
+
+# Render build artifacts (generated locally)
+backend/data/
+backend/__pycache__/
