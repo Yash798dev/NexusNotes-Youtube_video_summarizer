@@ -2,12 +2,6 @@
 
 > A modern note-taking application built with intelligent audio processing and visual knowledge mapping capabilities.
 
-![TypeScript](https://img.shields.io/badge/TypeScript-58.7%25-3178C6?style=flat-square&logo=typescript)
-![Python](https://img.shields.io/badge/Python-35%25-3776AB?style=flat-square&logo=python)
-![CSS](https://img.shields.io/badge/CSS-5.6%25-1572B6?style=flat-square&logo=css3)
-![Next.js](https://img.shields.io/badge/Next.js-16.2.6-black?style=flat-square&logo=nextjs)
-![FastAPI](https://img.shields.io/badge/FastAPI-python-009688?style=flat-square&logo=fastapi)
-![React](https://img.shields.io/badge/React-19.2.4-61DAFB?style=flat-square&logo=react)
 
 ---
 
